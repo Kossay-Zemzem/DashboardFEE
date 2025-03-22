@@ -1,0 +1,9 @@
+<div class="flex flex-row  h-screen  gap-3 overflow-auto">
+  <app-sidebar></app-sidebar>
+  <div class="flex flex-col flex-auto">
+    <app-header></app-header>
+    <div class="">
+      <router-outlet></router-outlet> <!-- this is the core that will change depending on the page you're in -->
+    </div>
+  </div>
+</div>

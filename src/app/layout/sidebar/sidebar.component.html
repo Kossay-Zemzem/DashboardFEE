@@ -1,0 +1,16 @@
+<div class="flex flex-col items-center h-full gap-6 bg-[#EAF2FD] ">
+    <div class="">
+        <img src="../../../assets/images/Logo (1).svg" class="px-4 pt-4">
+    </div>
+    <div class="flex flex-col gap-4">
+        <app-side-button iconName="layout-dashboard" content="Liste des memebres"></app-side-button>
+        <app-side-button iconName="layout-list" content="Taches"></app-side-button>
+        <app-side-button iconName="user-round-plus" content="Demandes d'inscription"></app-side-button>
+        <app-side-button iconName="log-out" content="Log out"></app-side-button>
+
+        <!-- 
+        new app-side-button desired structure :
+        <app-side-button *ngFor="let i of [0,1,2,3,4]" iconName="SidebarItems[i].icon" content="SidebarItems[i].name" link="SidebarItems[i].link" />
+        -->
+    </div>
+</div>
