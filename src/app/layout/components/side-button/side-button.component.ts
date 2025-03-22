@@ -8,4 +8,15 @@ import { Component,Input } from '@angular/core';
 export class SideButtonComponent {
   @Input() content = "unknown";
   @Input() iconName = "";
+  @Input() link="" ;
+  textColorTcss:string="text-gray-700";
+  ngOnInit(): void { 
+    if(this.content=="Log out"){
+      this.textColorTcss="text-red-500"; //change the color of the text to red for any button called "Log out"
+    }
+    }
+
+  constructor() {
+
+  }
 }

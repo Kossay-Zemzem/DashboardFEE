@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeAdminComponent } from './home-admin.component';
+import { TachePageComponent } from './tache-page.component';
 
-describe('HomeAdminComponent', () => {
-  let component: HomeAdminComponent;
-  let fixture: ComponentFixture<HomeAdminComponent>;
+describe('TachePageComponent', () => {
+  let component: TachePageComponent;
+  let fixture: ComponentFixture<TachePageComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeAdminComponent]
+      declarations: [TachePageComponent]
     });
-    fixture = TestBed.createComponent(HomeAdminComponent);
+    fixture = TestBed.createComponent(TachePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

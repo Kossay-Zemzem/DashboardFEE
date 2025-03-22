@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeAdminComponent } from './layout/home-admin/home-admin.component';
+
+import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.component';
+import { MembresPageComponent } from './layout/membres-page/membres-page.component';
+import { TachePageComponent } from './layout/tache-page/tache-page.component';
+import { DemandePageComponent } from './layout/demande-page/demande-page.component';
 
 const routes: Routes = [
-  {path:"",redirectTo:"/home", pathMatch:"full"},
-  {path:"home",component:HomeAdminComponent},
+  {path:"",redirectTo:"/membres", pathMatch:"full"},
+  {path:"membres",component:MembresPageComponent},
+  {path:"taches",component:TachePageComponent},
+  {path:"demande",component:DemandePageComponent},
+  {path:"**",component:PageNotFoundComponent},
 ];
 
 @NgModule({
@@ -12,3 +19,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+//exporting the list of pages instead of each page separately
+export const listPages = [PageNotFoundComponent,MembresPageComponent,TachePageComponent,DemandePageComponent];

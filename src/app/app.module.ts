@@ -1,25 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+//ICON IMPORTS-------------------------------------
+import { LucideAngularModule, LayoutDashboard, LayoutList ,MapPinCheck,UserRoundPlus,LogOut   } from 'lucide-angular';
+//-------------------------------------------------
+//COMPONENTS IMPORTS-------------------------------
 import { AppComponent } from './app.component';
-
-import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { HomeAdminComponent } from './layout/home-admin/home-admin.component';
-import { SideButtonComponent } from './layout/components/sidebarComponents/side-button/side-button.component';
+import { SidebarComponent } from './layout/components/sidebar/sidebar.component';
+import { HeaderComponent } from './layout/components/header/header.component';
+import { SideButtonComponent } from './layout/components/side-button/side-button.component';
 import { ProfileCardComponent } from './layout/components/profile-card/profile-card.component';
 
-import { LucideAngularModule, LayoutDashboard, LayoutList ,MapPinCheck,UserRoundPlus,LogOut   } from 'lucide-angular';
+//LIST OF PAGES-------------------------------------
+import { listPages } from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeAdminComponent,
     SidebarComponent,
     HeaderComponent,
-    HomeAdminComponent,
     SideButtonComponent,
-    ProfileCardComponent
+    ProfileCardComponent,
+    listPages, 
   ],
   imports: [
     BrowserModule,
