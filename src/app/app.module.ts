@@ -18,6 +18,7 @@ import { AuthPageComponent } from './layout/auth-page/auth-page.component';
 import { SearchBarComponent } from './layout/components/search-bar/search-bar.component';
 import { ComiteFilterComponent } from './layout/components/comite-filter/comite-filter.component';
 import { FilterItemComponent } from './layout/components/comite-filter/filter-item/filter-item.component';
+import { MemebresListeComponent } from './layout/components/memebres-liste/memebres-liste.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { FilterItemComponent } from './layout/components/comite-filter/filter-it
     SearchBarComponent,
     ComiteFilterComponent,
     FilterItemComponent,
+    MemebresListeComponent,
   ],
   imports: [
     BrowserModule,
