@@ -16,6 +16,9 @@ import { ProfileCardComponent } from './layout/components/profile-card/profile-c
 import { listPages } from './app-routing.module';
 import { AuthPageComponent } from './layout/auth-page/auth-page.component';
 import { SearchBarComponent } from './layout/components/search-bar/search-bar.component';
+import { ComiteFilterComponent } from './layout/components/comite-filter/comite-filter.component';
+import { FilterItemComponent } from './layout/components/comite-filter/filter-item/filter-item.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { SearchBarComponent } from './layout/components/search-bar/search-bar.co
     ProfileCardComponent,
     listPages,
     AuthPageComponent,
-    SearchBarComponent, 
+    SearchBarComponent,
+    ComiteFilterComponent,
+    FilterItemComponent,
   ],
   imports: [
     BrowserModule,
