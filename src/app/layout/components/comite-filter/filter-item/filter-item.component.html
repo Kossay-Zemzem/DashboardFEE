@@ -1,21 +1,22 @@
-<div class="flex flex-row items-center gap-2" *ngIf="!isSelected ;else SelectedStyle">
+<button class="flex flex-row items-center gap-2" *ngIf="!isSelected ;else SelectedStyle" (click)="onButtonClick()">
     <div class="font-medium text-gray-500">
-        Media
+        {{name}}
     </div>
     <div class="flex items-center justify-center  w-6 h-6 rounded-full
     bg-gray-200 text-gray-500 font-extrabold">
-        5
+        {{value}}
     </div>
-</div>
+</button>
 
 <ng-template #SelectedStyle>
-    <div class="flex flex-row items-center gap-2">
+    <button class="flex flex-row items-center gap-2 relative">
         <div class="font-medium text-blue-600">
-            Media
+            {{name}}
         </div>
-        <div class="flex items-center justify-center  w-6 h-6 rounded-full
-    bg-gray-200 text-blue-500 font-extrabold">
-            7
+        <div class="flex items-center justify-center  w-7 h-7 rounded-full
+    bg-gray-200 text-blue-500 font-extrabold border-b-4 border-blue-500">
+            {{value}}
         </div>
-    </div>
+        <div class="absolute bottom-[-4px] left-0 w-full h-[1px] bg-blue-500"></div>
+    </button>
 </ng-template>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-filter-item',
@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./filter-item.component.css']
 })
 export class FilterItemComponent {
-  isSelected:boolean=false;
+  @Input() name:string='unknown';
+  @Input() value:number=0;
+  @Input() isSelected:boolean=false;
+  @Output() buttonClicked = new EventEmitter();
   constructor() { }
-
+  
+  onButtonClick():void{
+    this.buttonClicked.emit();
+  }
 }

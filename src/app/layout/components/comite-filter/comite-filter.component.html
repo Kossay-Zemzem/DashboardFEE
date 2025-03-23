@@ -1,5 +1,5 @@
 <div class="flex flex-row items-center justify-around bg-gray-100 h-10">
-    <app-filter-item />
-    <app-filter-item />
-    <app-filter-item />
+    <app-filter-item *ngFor="let i of [0,1,2]" [name]="FilterItems[i].name" [value]="FilterItems[i].value"
+        [isSelected]="FilterItems[i].selectedState" (buttonClicked)="onFilterButtonClick(i)" />
+
 </div>
