@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -7,12 +6,22 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
   SidebarItems = [
-    { name: 'List Des Membres', icon: 'layout-dashboard', link: '/membres' },
-    { name: 'Taches', icon: 'layout-list', link: '/taches' },
-    { name: "Demandes d'inscription", icon: 'user-round-plus', link: '/demande' },
-    { name: 'Log out', icon: 'log-out', link: '/' },
+    { name: 'List Des Membres', icon: 'layout-dashboard', link: '/membres', activeState: true },
+    { name: 'Taches', icon: 'layout-list', link: '/taches', activeState: false },
+    { name: "Demandes d'inscription", icon: 'user-round-plus', link: '/demande', activeState: false },
+    { name: 'Log out', icon: 'log-out', link: '/', activeState: false },
   ];
-  constructor() { 
+  constructor() {}
 
-  }
+  onSideButtonClick(i:number){
+    this.SidebarItems.forEach((item,index) => {
+      item.activeState= i==index
+/*       if(i==index){
+        item.activeState = true;
+      }else{
+        item.activeState = false;
+      } */
+
+    });
+   }
 }

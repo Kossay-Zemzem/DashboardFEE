@@ -1,5 +1,7 @@
 <div class="">
-    <button [routerLink]="link" class="flex flex-row items-center gap-2 w-52 hover:bg-[#D8E0F5] rounded-lg px-1 py-2">
+    <button [routerLink]="link"
+        class="flex flex-row items-center gap-2 w-52 h-10 {{buttonBgTcss}} {{buttonHoverBgTcss}} rounded-lg px-1 py-2"
+        (click)="onButtonClick()">
 
         <lucide-icon [name]="iconName" class="h-5 {{textColorTcss}}"></lucide-icon>
         <div class="flex text-sm font-semibold {{textColorTcss}} focus:text-blue-600">
