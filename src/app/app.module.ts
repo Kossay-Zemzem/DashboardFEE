@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 //ICON IMPORTS-------------------------------------
-import { LucideAngularModule, LayoutDashboard, LayoutList ,MapPinCheck,UserRoundPlus,LogOut   } from 'lucide-angular';
+import { LucideAngularModule, LayoutDashboard, LayoutList ,
+  MapPinCheck,UserRoundPlus,LogOut,Search} from 'lucide-angular';
 //-------------------------------------------------
 //COMPONENTS IMPORTS-------------------------------
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { ProfileCardComponent } from './layout/components/profile-card/profile-c
 //LIST OF PAGES-------------------------------------
 import { listPages } from './app-routing.module';
 import { AuthPageComponent } from './layout/auth-page/auth-page.component';
+import { SearchBarComponent } from './layout/components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,13 @@ import { AuthPageComponent } from './layout/auth-page/auth-page.component';
     SideButtonComponent,
     ProfileCardComponent,
     listPages,
-    AuthPageComponent, 
+    AuthPageComponent,
+    SearchBarComponent, 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    LucideAngularModule.pick({ LayoutDashboard,LayoutList,MapPinCheck,UserRoundPlus,LogOut   })
+    LucideAngularModule.pick({ LayoutDashboard,LayoutList,MapPinCheck,UserRoundPlus,LogOut,Search    })
   ],
   providers: [],
   bootstrap: [AppComponent]
