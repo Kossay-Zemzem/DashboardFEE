@@ -1,9 +1,13 @@
-<div class="flex flex-row  h-screen  gap-3 overflow-auto">
+<div class="flex flex-row h-screen gap-3 overflow-auto" *ngIf="showLayout(); else noLayout">
   <app-sidebar></app-sidebar>
   <div class="flex flex-col flex-auto">
     <app-header></app-header>
     <div class="">
-      <router-outlet></router-outlet> <!-- this is the core that will change depending on the page you're in -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+
+<ng-template #noLayout>
+  <router-outlet></router-outlet> <!-- Only the core content for excluded routes -->
+</ng-template>

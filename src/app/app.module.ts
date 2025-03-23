@@ -13,6 +13,7 @@ import { ProfileCardComponent } from './layout/components/profile-card/profile-c
 
 //LIST OF PAGES-------------------------------------
 import { listPages } from './app-routing.module';
+import { AuthPageComponent } from './layout/auth-page/auth-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { listPages } from './app-routing.module';
     HeaderComponent,
     SideButtonComponent,
     ProfileCardComponent,
-    listPages, 
+    listPages,
+    AuthPageComponent, 
   ],
   imports: [
     BrowserModule,

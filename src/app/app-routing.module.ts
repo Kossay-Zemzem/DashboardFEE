@@ -5,9 +5,12 @@ import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.co
 import { MembresPageComponent } from './layout/membres-page/membres-page.component';
 import { TachePageComponent } from './layout/tache-page/tache-page.component';
 import { DemandePageComponent } from './layout/demande-page/demande-page.component';
+import { AuthPageComponent } from './layout/auth-page/auth-page.component';
+
 
 const routes: Routes = [
-  {path:"",redirectTo:"/membres", pathMatch:"full"},
+  {path:"",redirectTo:"/auth", pathMatch:"full"},
+  {path:"auth",component:AuthPageComponent},
   {path:"membres",component:MembresPageComponent},
   {path:"taches",component:TachePageComponent},
   {path:"demande",component:DemandePageComponent},
@@ -20,4 +23,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 //exporting the list of pages instead of each page separately
-export const listPages = [PageNotFoundComponent,MembresPageComponent,TachePageComponent,DemandePageComponent];
+export const listPages = [PageNotFoundComponent,AuthPageComponent,MembresPageComponent,TachePageComponent,DemandePageComponent];
