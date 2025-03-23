@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 //ICON IMPORTS-------------------------------------
 import { LucideAngularModule, LayoutDashboard, LayoutList ,
-  MapPinCheck,UserRoundPlus,LogOut,Search} from 'lucide-angular';
+  MapPinCheck,UserRoundPlus,LogOut,Search,Bell} from 'lucide-angular';
 //-------------------------------------------------
 //COMPONENTS IMPORTS-------------------------------
 import { AppComponent } from './app.component';
@@ -31,7 +31,8 @@ import { SearchBarComponent } from './layout/components/search-bar/search-bar.co
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    LucideAngularModule.pick({ LayoutDashboard,LayoutList,MapPinCheck,UserRoundPlus,LogOut,Search    })
+    LucideAngularModule.pick({ LayoutDashboard,LayoutList,MapPinCheck,
+      UserRoundPlus,LogOut,Search,Bell    })
   ],
   providers: [],
   bootstrap: [AppComponent]
