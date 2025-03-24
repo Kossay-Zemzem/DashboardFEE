@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 //ICON IMPORTS-------------------------------------
 import { LucideAngularModule, LayoutDashboard, LayoutList ,
-  MapPinCheck,UserRoundPlus,LogOut,Search,Bell} from 'lucide-angular';
+  MapPinCheck,UserRoundPlus,LogOut,Search,Bell,Pencil,Trash2} from 'lucide-angular';
 //-------------------------------------------------
 //COMPONENTS IMPORTS-------------------------------
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { SearchBarComponent } from './layout/components/search-bar/search-bar.co
 import { ComiteFilterComponent } from './layout/components/comite-filter/comite-filter.component';
 import { FilterItemComponent } from './layout/components/comite-filter/filter-item/filter-item.component';
 import { MembresListeComponent } from './layout/components/membres-liste/membres-liste.component';
+import { MembreItemComponent } from './layout/components/membres-liste/membre-item/membre-item.component';
 
 
 @NgModule({
@@ -35,12 +36,13 @@ import { MembresListeComponent } from './layout/components/membres-liste/membres
     ComiteFilterComponent,
     FilterItemComponent,
     MembresListeComponent,
+    MembreItemComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     LucideAngularModule.pick({ LayoutDashboard,LayoutList,MapPinCheck,
-      UserRoundPlus,LogOut,Search,Bell    })
+      UserRoundPlus,LogOut,Search,Bell,Pencil,Trash2  })
   ],
   providers: [],
   bootstrap: [AppComponent]

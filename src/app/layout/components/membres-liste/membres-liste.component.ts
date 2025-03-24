@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class MembresListeComponent {
   headerItems:Array<string> = ["Nom","Numero","Email" ,"Status" ,"Actions"];
-
+  data:Array<any> = [
+    {imgSrc:"",nom:"unknown",prenom:"unknown",numero:"unknown",email:"unknown",status:true}]
 }
