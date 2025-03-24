@@ -1,0 +1,17 @@
+[
+{"id":1,"nom":"kossay","prenom":"zemzem","numero":"27852654"
+ ,"email":"membre1@enicar.uncar.tn","isLibre":true,
+"imgSrc":"../../../../../assets/images/Placeholder/blank-profile-picture.png",
+"comite":"MEDIA"}
+,
+{"id":2,"nom":"Amine chograni","prenom":"Mohamed","numero":"27852654"
+ ,"email":"membre2@enicar.ucar.tn","isLibre":false,
+"imgSrc":"../../../../../assets/images/Placeholder/blank-profile-picture.png",
+"comite":"MEDIA"}
+,
+{"id":3,"nom":"rebaii","prenom":"Saber","numero":"27852654"
+ ,"email":"membre3@enicar.ucar.tn","isLibre":true,
+"imgSrc":"../../../../../assets/images/Placeholder/blank-profile-picture.png",
+"comite":"MEDIA"}
+
+]

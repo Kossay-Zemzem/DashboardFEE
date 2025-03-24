@@ -1,20 +1,18 @@
-<div class="flex flex-row items-center justify-around">
+<div class="grid grid-cols-[0.5fr,2fr,1fr,2fr,1fr,1fr] items-center justify-items-center gap-4">
     <img src="../../../../../assets/images/Placeholder/blank-profile-picture.png" alt="membre"
-        class="w-12 h-12 rounded-full">
-    <div>
+        class="w-12 h-12 rounded-full justify-self-center">
+    <div class="truncate text-center {{textStyleTcss}}">
         {{prenom}} {{nom}}
     </div>
-    <div>
+    <div class="truncate text-center {{textStyleTcss}}">
         {{numero}}
     </div>
-    <div>
+    <div class="truncate text-center text-nowrap {{textStyleTcss}}">
         {{email}}<!-- etudiant1&#64;enicar.ucar.tn -->
     </div>
-    <div class="bg-green-400 w-20 text-center border-2 border-green-600 rounded-sm border-spacing-4 p-1 ">
-        {{status}}
-    </div>
-    <div class="flex flex-row items-center justify-around gap-6 ">
-        <lucide-icon name="pencil" class=""></lucide-icon>
-        <lucide-icon name="trash-2" class=""></lucide-icon>
+    <app-yes-no-indicator [content]="isLibre ? 'Libre' : 'Occupe'" [isYes]="isLibre" />
+    <div class="flex flex-row items-center justify-around gap-10">
+        <lucide-icon name="pencil" class="w-7 h-7 text-yellow-400"></lucide-icon>
+        <lucide-icon name="trash-2" class="w-7 h-7 text-red-500"></lucide-icon>
     </div>
 </div>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
 //ICON IMPORTS-------------------------------------
 import { LucideAngularModule, LayoutDashboard, LayoutList ,
   MapPinCheck,UserRoundPlus,LogOut,Search,Bell,Pencil,Trash2} from 'lucide-angular';
@@ -21,6 +22,7 @@ import { ComiteFilterComponent } from './layout/components/comite-filter/comite-
 import { FilterItemComponent } from './layout/components/comite-filter/filter-item/filter-item.component';
 import { MembresListeComponent } from './layout/components/membres-liste/membres-liste.component';
 import { MembreItemComponent } from './layout/components/membres-liste/membre-item/membre-item.component';
+import { YesNoIndicatorComponent } from './layout/components/yes-no-indicator/yes-no-indicator.component';
 
 
 @NgModule({
@@ -37,10 +39,12 @@ import { MembreItemComponent } from './layout/components/membres-liste/membre-it
     FilterItemComponent,
     MembresListeComponent,
     MembreItemComponent,
+    YesNoIndicatorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
+    HttpClientModule,
     LucideAngularModule.pick({ LayoutDashboard,LayoutList,MapPinCheck,
       UserRoundPlus,LogOut,Search,Bell,Pencil,Trash2  })
   ],

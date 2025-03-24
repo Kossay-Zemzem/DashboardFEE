@@ -1,8 +1,14 @@
 <div class="flex flex-col ">
-    <div class="flex flex-row justify-around ">
-        <div *ngFor="let i of [0,1,2,3,4]" class="font-poppins font-medium text-sm text-gray-400">{{headerItems[i]}}
+    <div class="grid grid-cols-[0.5fr,2fr,1fr,2fr,1fr,1fr] items-center justify-items-center gap-4">
+        <div class="">
+
+        </div>
+        <div *ngFor="let i of [0,1,2,3,4]" class="font-poppins font-medium text-sm text-gray-400">
+            {{headerItems[i]}}
         </div>
     </div>
     <div class="border-b-2 mx-8 mt-2"></div>
-    <app-membre-item *ngFor="let i of [0]" class="" />
+    <div class="flex flex-col gap-4 mt-4">
+        <app-membre-item *ngFor="let membre of data" [dataMembre]="membre" />
+    </div>
 </div>
