@@ -1,17 +1,26 @@
 [
-{"id":1,"nom":"kossay","prenom":"zemzem","numero":"27852654"
+{"id":1,"nom":"Zemzem","prenom":"Mayssam","numero":"27852654"
  ,"email":"membre1@enicar.uncar.tn","isLibre":true,
 "imgSrc":"../../../../../assets/images/Placeholder/blank-profile-picture.png",
-"comite":"MEDIA"}
+"comite":"LOGISTIQUE"}
 ,
-{"id":2,"nom":"Amine chograni","prenom":"Mohamed","numero":"27852654"
- ,"email":"membre2@enicar.ucar.tn","isLibre":false,
+{"id":2,"nom":"Amine chograni","prenom":"Mohamed","numero":"27872654"
+ ,"email":"membre2@enicar.ucar.tn","isLibre":true,
 "imgSrc":"../../../../../assets/images/Placeholder/blank-profile-picture.png",
 "comite":"MEDIA"}
 ,
-{"id":3,"nom":"rebaii","prenom":"Saber","numero":"27852654"
+{"id":3,"nom":"rebaii","prenom":"Saber","numero":"91852654"
  ,"email":"membre3@enicar.ucar.tn","isLibre":true,
 "imgSrc":"../../../../../assets/images/Placeholder/blank-profile-picture.png",
-"comite":"MEDIA"}
+"comite":"SPONSORING"},
+{"id":4,"nom":"El matri","prenom":"Mahmoud","numero":"27352654"
+ ,"email":"membre4@enicar.ucar.tn","isLibre":false,
+"imgSrc":"../../../../../assets/images/Placeholder/blank-profile-picture.png",
+"comite":"SPONSORING"},
+{"id":5,"nom":"Chikhaaa","prenom":"Bakhanou","numero":"26978564"
+ ,"email":"Chikhaa5@nessma.jadida.tn","isLibre":false,
+"imgSrc":"../../../../../assets/images/Placeholder/blank-profile-picture.png",
+"comite":"LOGISTIQUE"}
+
 
 ]
