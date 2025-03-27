@@ -21,6 +21,8 @@ export class MembresListeComponent implements OnInit {
       isLibre:true,
       comite:"unknown"}
     ]
+    nbMemParComite:Array<number>=[0,0,0]; // 0 MEDIA , 0 SPONSORING , 0 LOGISTIQUE
+
     comiteSelected:string="MEDIA";
     private subscription: Subscription = new Subscription(); //subscription pour le comite selectionne
 
@@ -28,9 +30,14 @@ export class MembresListeComponent implements OnInit {
     private ComiteFilterServ:MembreFilterServiceService
   ) {}
     ngOnInit():void{
-    this.MemberServ.getMembres().subscribe(dataServ=>{this.data=dataServ});
+    this.MemberServ.getMembres().subscribe(dataServ=>{
+      this.data=dataServ;
+      this.UpdateNbMembreParComite();// update the number of members per comite when the data is received
+    });
+
     this.subscription= this.ComiteFilterServ.getComiteSelected().subscribe(comiteSelected=>this.comiteSelected=comiteSelected);// ensures that the component is notified when the selected comite changes
     //N.B this.subscription is a Subscription objec which we need to be able to unsubscribe later when the object is destroyed and avoid memory leaks (ngOnDestroy is lifecycle hook).
+    
   }
 
   get filteredComiteMembres(): Array<Membre> { //methode qui permet de filtrer les membres par comite et l'affecter a filteredComiteMembres pour l'affichage
@@ -43,6 +50,21 @@ export class MembresListeComponent implements OnInit {
 
   ngOnDestroy(): void { //a methode that unsubscribes from the subscription when the component is destroyed to avoid memory leaks
     this.subscription.unsubscribe();
+  }
+
+  UpdateNbMembreParComite():void{
+    this.nbMemParComite=[0,0,0]; // 0 MEDIA , 0 SPONSORING , 0 LOGISTIQUE
+    this.data.forEach(membre => {
+      if (membre.comite.toUpperCase() === 'MEDIA') {
+        this.nbMemParComite[0]++;
+      } else if (membre.comite.toUpperCase() === 'SPONSORING') {
+        this.nbMemParComite[1]++;
+      } else if (membre.comite.toUpperCase() === 'LOGISTIQUE') {
+        this.nbMemParComite[2]++;
+      }
+    });
+    this.ComiteFilterServ.updateNbMembreParComite(this.nbMemParComite);
+    console.log(this.nbMemParComite);
   }
 
 }
