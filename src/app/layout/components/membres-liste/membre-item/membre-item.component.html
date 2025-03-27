@@ -10,7 +10,9 @@
             {{numero}}
         </div>
         <ng-template #editField>
-            <input type="text" [(ngModel)]="numero" class="border border-gray-300 rounded px-2 py-1 w-full" />
+            <input type="text" [(ngModel)]="numero"
+                class="text-center border border-gray-300 border-2 rounded px-2 py-1 w-24 {{textStyleTcss}}"
+                (keydown.enter)="saveNumero()" />
         </ng-template>
     </div>
     <div class="truncate text-center text-nowrap {{textStyleTcss}}">
