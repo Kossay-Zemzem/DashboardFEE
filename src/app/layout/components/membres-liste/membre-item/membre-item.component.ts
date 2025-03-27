@@ -25,6 +25,7 @@ export class MembreItemComponent {
       comite:"unknown"};
 
     textStyleTcss:string="font-poppins font-normal text-md";
+    isEditing:boolean=false;
 
     @Output() deleteMembre: EventEmitter<number> = new EventEmitter<number>();
 
@@ -45,5 +46,13 @@ export class MembreItemComponent {
   supprimerMembre(): void {
     console.log("Suppression du membre avec l'ID: " + this.dataMembre.id);
     this.deleteMembre.emit(this.dataMembre.id); // Notify the parent component
+  }
+  modifierMembre(): void {
+    if (this.isEditing) {
+      // Save the changes (you can emit an event to the parent or call a service here)
+      console.log(`Updated numero: ${this.numero}`);
+      this.dataMembre.numero = this.numero; // Update the DOM immediately
+    }
+    this.isEditing = !this.isEditing; // Toggle edit mode
   }
 }

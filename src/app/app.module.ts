@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 //ICON IMPORTS-------------------------------------
 import { LucideAngularModule, LayoutDashboard, LayoutList ,
   MapPinCheck,UserRoundPlus,LogOut,Search,Bell,Pencil,Trash2} from 'lucide-angular';
@@ -45,6 +46,7 @@ import { YesNoIndicatorComponent } from './layout/components/yes-no-indicator/ye
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule,
+    FormsModule,
     LucideAngularModule.pick({ LayoutDashboard,LayoutList,MapPinCheck,
       UserRoundPlus,LogOut,Search,Bell,Pencil,Trash2  })
   ],

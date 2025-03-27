@@ -4,15 +4,23 @@
     <div class="truncate text-center {{textStyleTcss}}">
         {{prenom}} {{nom}}
     </div>
+    <!-- Editable numero field -->
     <div class="truncate text-center {{textStyleTcss}}">
-        {{numero}}
+        <div *ngIf="!isEditing; else editField">
+            {{numero}}
+        </div>
+        <ng-template #editField>
+            <input type="text" [(ngModel)]="numero" class="border border-gray-300 rounded px-2 py-1 w-full" />
+        </ng-template>
     </div>
     <div class="truncate text-center text-nowrap {{textStyleTcss}}">
-        {{email}}<!-- etudiant1&#64;enicar.ucar.tn -->
+        {{email}}
     </div>
     <app-yes-no-indicator [content]="isLibre ? 'Libre' : 'Occupe'" [isYes]="isLibre" />
     <div class="flex flex-row items-center justify-around gap-10">
-        <lucide-icon name="pencil" class="w-7 h-7 text-yellow-400"></lucide-icon>
+        <button (click)="modifierMembre()">
+            <lucide-icon name="pencil" class="w-7 h-7 text-yellow-400"></lucide-icon>
+        </button>
         <button (click)="supprimerMembre()">
             <lucide-icon name="trash-2" class="w-7 h-7 text-red-500"></lucide-icon>
         </button>
