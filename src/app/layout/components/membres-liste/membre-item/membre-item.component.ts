@@ -39,4 +39,9 @@ export class MembreItemComponent {
       this.comite = membre.comite;
     }
   }
+  supprimerMembre(id:string):void{
+    console.log("Suppression du membre avec l'ID: " + id);
+    // Ici, vous pouvez ajouter la logique pour supprimer le membre
+    // Par exemple, appeler un service pour supprimer le membre du backend
+  }
 }

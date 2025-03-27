@@ -16,13 +16,9 @@ export class ComiteFilterComponent {
   constructor(private ComiteFilterServ:MembreFilterServiceService) {}
   ngOnInit():void{
   this.subscription= this.ComiteFilterServ.getNbMembreParComite().subscribe(nbMembreParComite=>{
-    this.FilterItems.forEach((item,index) => {
-      item.value=nbMembreParComite[index]
-    });
+    this.FilterItems.forEach((item,index) => item.value=nbMembreParComite[index]); //mise a jour des valeurs des items du filtre
+  });
   }
-  )
-  }
-
   onFilterButtonClick(i:number){
     this.FilterItems.forEach((item,index) => {
       item.selectedState= i==index
@@ -31,10 +27,6 @@ export class ComiteFilterComponent {
     this.FilterItems.forEach((item,index) => {
       
    });
-  }
-  
-   ngOnChanges():void{
-    
   }
   ngOnDestroy():void{
     this.subscription.unsubscribe(); //unsubscribes from the subscription when the component is destroyed to avoid memory leaks 

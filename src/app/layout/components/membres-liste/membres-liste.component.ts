@@ -27,8 +27,8 @@ export class MembresListeComponent implements OnInit {
     private subscription: Subscription = new Subscription(); //subscription pour le comite selectionne
 
   constructor(private MemberServ:MembreService,
-    private ComiteFilterServ:MembreFilterServiceService
-  ) {}
+    private ComiteFilterServ:MembreFilterServiceService ) {}
+    
     ngOnInit():void{
     this.MemberServ.getMembres().subscribe(dataServ=>{
       this.data=dataServ;
@@ -48,10 +48,6 @@ export class MembresListeComponent implements OnInit {
     return membre.id;
   } 
 
-  ngOnDestroy(): void { //a methode that unsubscribes from the subscription when the component is destroyed to avoid memory leaks
-    this.subscription.unsubscribe();
-  }
-
   UpdateNbMembreParComite():void{
     this.nbMemParComite=[0,0,0]; // 0 MEDIA , 0 SPONSORING , 0 LOGISTIQUE
     this.data.forEach(membre => {
@@ -63,8 +59,11 @@ export class MembresListeComponent implements OnInit {
         this.nbMemParComite[2]++;
       }
     });
-    this.ComiteFilterServ.updateNbMembreParComite(this.nbMemParComite);
-    console.log(this.nbMemParComite);
+    this.ComiteFilterServ.updateNbMembreParComite(this.nbMemParComite); //notify the subscribers of the new value 
+  }
+
+  ngOnDestroy(): void { //a methode that unsubscribes from the subscription when the component is destroyed to avoid memory leaks
+    this.subscription.unsubscribe();
   }
 
 }
