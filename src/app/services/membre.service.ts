@@ -30,4 +30,8 @@ export class MembreService {
     }, 500); // Simulate network delay
   }); */
   }
+  updateMembre(id:number,newNumero:string):Observable<Membre[]>{
+    //requette PATCH du serveur pour modifier numero d'un membre d'ID id
+    return this.http.patch<Membre[]>(`${this.url}/${id}`,{numero:newNumero}); //{cle:nouvelle_valeur} format
+  }
 }

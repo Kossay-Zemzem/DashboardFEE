@@ -82,4 +82,17 @@ export class MembresListeComponent implements OnInit {
     });
     this.UpdateNbMembreParComite(); // Update the number of members per comite after deletion
   }
+  modifierMembre(id: number, numero: string): void {
+    // Call the service to update the member in the JSON file
+    this.MemberServ.updateMembre(id, numero).subscribe({
+      next: () => {
+        console.log(`Membre with ID ${id} updated successfully.`);
+        alert('WARNING: Update logic has not yet been implemented (user was not realy updated)');
+      },
+      error: (err) => {
+        console.error(`Failed to update membre with ID ${id}:`, err);
+        alert('Failed to update the user. Please try again.');
+      }
+    });
+  }
 }

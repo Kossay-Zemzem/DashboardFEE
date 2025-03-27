@@ -14,6 +14,7 @@ export class MembreItemComponent {
    email:string="unknown";
    isLibre:boolean=true;
    comite:string="unknown";
+
     @Input() dataMembre:Membre={
       id:0,
       imgSrc:"",
@@ -28,6 +29,7 @@ export class MembreItemComponent {
     isEditing:boolean=false;
 
     @Output() deleteMembre: EventEmitter<number> = new EventEmitter<number>();
+    @Output() updateMembre: EventEmitter<{id:number, numero:string}> = new EventEmitter<{id:number, numero:string}>();
 
   constructor() {}
   ngOnInit():void{}
@@ -47,7 +49,7 @@ export class MembreItemComponent {
     console.log("Suppression du membre avec l'ID: " + this.dataMembre.id);
     this.deleteMembre.emit(this.dataMembre.id); // Notify the parent component
   }
-  
+
   modifierMembre(): void {
     this.isEditing = !this.isEditing;
   }
@@ -56,5 +58,6 @@ export class MembreItemComponent {
     console.log(`Updated numero: ${this.numero}`);
     this.dataMembre.numero = this.numero; // Update the DOM immediately
     this.isEditing = false; // Exit edit mode
+    this.updateMembre.emit({id:this.dataMembre.id,numero:this.dataMembre.numero}) // Call the service to update the member
   }
 }

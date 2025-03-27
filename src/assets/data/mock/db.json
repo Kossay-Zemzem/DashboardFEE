@@ -11,7 +11,17 @@
       "comite": "LOGISTIQUE"
     },
     {
-      "id": "3",
+      "id": "2",
+      "nom": "Amine chograni",
+      "prenom": "Mohamed",
+      "numero": "27872654",
+      "email": "membre2@enicar.ucar.tn",
+      "isLibre": true,
+      "imgSrc": "../../../../../assets/images/Placeholder/blank-profile-picture.png",
+      "comite": "MEDIA"
+    },
+    {
+      "id": 3,
       "nom": "rebaii",
       "prenom": "Saber",
       "numero": "91852654",
@@ -29,16 +39,6 @@
       "isLibre": false,
       "imgSrc": "../../../../../assets/images/Placeholder/blank-profile-picture.png",
       "comite": "SPONSORING"
-    },
-    {
-      "id": "5",
-      "nom": "Chikhaaa",
-      "prenom": "Bakhanou",
-      "numero": "26978564",
-      "email": "Chikhaa5@nessma.jadida.tn",
-      "isLibre": false,
-      "imgSrc": "../../../../../assets/images/Placeholder/blank-profile-picture.png",
-      "comite": "LOGISTIQUE"
     }
   ]
 }

@@ -19,10 +19,16 @@
         "isLibre": true,
         "imgSrc": "../../../../../assets/images/Placeholder/blank-profile-picture.png",
         "comite": "MEDIA"
-      },{"id":3,"nom":"rebaii","prenom":"Saber","numero":"91852654"
-      ,"email":"membre3@enicar.ucar.tn","isLibre":true,
+      },
+      {"id":3,
+      "nom":"rebaii",
+      "prenom":"Saber",
+      "numero":"91852654"
+      ,"email":"membre3@enicar.ucar.tn",
+      "isLibre":true,
      "imgSrc":"../../../../../assets/images/Placeholder/blank-profile-picture.png",
-     "comite":"SPONSORING"},
+     "comite":"SPONSORING"
+    },
       {
         "id": "4",
         "nom": "El matri",
