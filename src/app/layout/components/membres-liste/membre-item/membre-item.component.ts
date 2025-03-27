@@ -1,4 +1,4 @@
-import { Component,Input,SimpleChanges } from '@angular/core';
+import { Component,Input,SimpleChanges,Output,EventEmitter} from '@angular/core';
 import { Membre } from 'src/app/models/Membre';
 
 @Component({
@@ -25,6 +25,9 @@ export class MembreItemComponent {
       comite:"unknown"};
 
     textStyleTcss:string="font-poppins font-normal text-md";
+
+    @Output() deleteMembre: EventEmitter<number> = new EventEmitter<number>();
+
   constructor() {}
   ngOnInit():void{}
   ngOnChanges(changes: SimpleChanges): void { //methode qui permet de detecter les changements des donnees des membres
@@ -39,9 +42,8 @@ export class MembreItemComponent {
       this.comite = membre.comite;
     }
   }
-  supprimerMembre(id:string):void{
-    console.log("Suppression du membre avec l'ID: " + id);
-    // Ici, vous pouvez ajouter la logique pour supprimer le membre
-    // Par exemple, appeler un service pour supprimer le membre du backend
+  supprimerMembre(): void {
+    console.log("Suppression du membre avec l'ID: " + this.dataMembre.id);
+    this.deleteMembre.emit(this.dataMembre.id); // Notify the parent component
   }
 }

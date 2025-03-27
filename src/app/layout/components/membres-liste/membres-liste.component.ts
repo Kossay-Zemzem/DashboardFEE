@@ -65,5 +65,21 @@ export class MembresListeComponent implements OnInit {
   ngOnDestroy(): void { //a methode that unsubscribes from the subscription when the component is destroyed to avoid memory leaks
     this.subscription.unsubscribe();
   }
-
+  supprimerMembre(id: number): void {
+    // Optimistically remove the member from the data array
+    this.data = this.data.filter(membre => membre.id !== id);
+  
+    // Call the service to delete the member from the JSON file
+    this.MemberServ.deleteMembre(id).subscribe({
+      next: () => {
+        console.log(`Membre with ID ${id} deleted successfully.`);
+        alert('WARNING: Delete logic has not yet been implemented (user was not realy deleted)');
+      },
+      error: (err) => {
+        console.error(`Failed to delete membre with ID ${id}:`, err);
+        alert('Failed to delete the user. Please try again.');
+      }
+    });
+    this.UpdateNbMembreParComite(); // Update the number of members per comite after deletion
+  }
 }

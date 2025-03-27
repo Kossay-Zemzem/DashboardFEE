@@ -13,7 +13,7 @@
     <app-yes-no-indicator [content]="isLibre ? 'Libre' : 'Occupe'" [isYes]="isLibre" />
     <div class="flex flex-row items-center justify-around gap-10">
         <lucide-icon name="pencil" class="w-7 h-7 text-yellow-400"></lucide-icon>
-        <button>
+        <button (click)="supprimerMembre()">
             <lucide-icon name="trash-2" class="w-7 h-7 text-red-500"></lucide-icon>
         </button>
     </div>

@@ -14,4 +14,15 @@ export class MembreService {
     return this.http.get<Membre[]>(this.url); //requette GET du serveur pour fetcher les membres 
     // ; pour le moment GET du fichier local JSON prochainement je suppose un JSON du backend Srping
   }
+  deleteMembre(id:number):Observable<void>{
+    //return this.http.delete<Membre[]>(`${this.url}/${id}`); //requette DELETE du serveur pour supprimer un membre (ne marche pas car on a pas du backend encore)
+
+      // Simulate a DELETE request (you can replace this with actual backend logic later)
+  return new Observable<void>((observer) => {
+    setTimeout(() => {
+      observer.next();
+      observer.complete();
+    }, 500); // Simulate network delay
+  });
+  }
 }
