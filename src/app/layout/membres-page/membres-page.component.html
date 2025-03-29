@@ -4,6 +4,6 @@
             [placeholderText]="'Chercher un membre...'" />
         <lucide-icon name="bell" class="w-28"></lucide-icon>
     </div>
-    <app-comite-filter />
+    <app-comite-filter *ngIf="searchQuery =='' " />
     <app-membres-liste />
 </div>

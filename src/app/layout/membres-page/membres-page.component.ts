@@ -8,9 +8,10 @@ import { MembreService } from 'src/app/services/membre.service';
   styleUrls: ['./membres-page.component.css']
 })
 export class MembresPageComponent {
-
+  searchQuery: string = '';
   constructor(private MembreServ: MembreFilterServiceService) { }
   updateSeachQuery(query: string): void {
     this.MembreServ.updateSearchQuery(query);
+    this.searchQuery = query;
   }
 }
