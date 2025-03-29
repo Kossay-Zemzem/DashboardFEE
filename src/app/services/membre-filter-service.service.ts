@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject,Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,8 @@ export class MembreFilterServiceService {
   constructor() { }
 
   private comiteSelectedSubject: BehaviorSubject<string> = new BehaviorSubject<string>('MEDIA'); // Default value is 'MEDIA'
-  private nbMembreParComiteSubject: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([0,0,0]); // 0 MEDIA , 0 SPONSORING , 0 LOGISTIQUE
+  private nbMembreParComiteSubject: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([0, 0, 0]); // 0 MEDIA , 0 SPONSORING , 0 LOGISTIQUE
+  private searchQuerySubject: BehaviorSubject<string> = new BehaviorSubject<string>(''); // Default value is empty string
   // Update the selected comite
   updateComiteSelected(comite: string): void {
     this.comiteSelectedSubject.next(comite); // Notify all subscribers of the new value (subscriber=component that uses the service to fetch data)
@@ -28,5 +29,14 @@ export class MembreFilterServiceService {
   // Get the current number of members per comite as an Observable (used by suvbscribers)
   getNbMembreParComite(): Observable<number[]> {
     return this.nbMembreParComiteSubject.asObservable();
+  }
+
+  // Update the search query
+  updateSearchQuery(query: string): void {
+    this.searchQuerySubject.next(query); // Notify all subscribers of the new value (subscriber=component that uses the service to fetch data)
+  }
+  // Get the current search query as an Observable (used by suvbscribers)
+  getSearchQuery(): Observable<string> {
+    return this.searchQuerySubject.asObservable();
   }
 }

@@ -8,9 +8,9 @@ import {Membre} from '../models/Membre'; // Import the Membre interface (modele)
 export class MembreService {
   
   constructor(private http:HttpClient) { }
-    private url:string = 'http://localhost:8080/membre'; // URL to spring boot backend
+  //private url:string = 'http://localhost:8080/membre'; // URL to spring boot backend
   //private url:string = 'assets/data/membres.json';  // URL to local JSON file for testing purposes. (only GET works)
-  //private url:string = 'http://localhost:3000/membre'; // URL to JSON server for testing purposes. (all CRUD operations work)
+  private url:string = 'http://localhost:3000/membre'; // URL to JSON server for testing purposes. (all CRUD operations work)
   //run server with command in terminal:  npx json-server .\src\assets\data\mock\db.json --port 3000
 
 

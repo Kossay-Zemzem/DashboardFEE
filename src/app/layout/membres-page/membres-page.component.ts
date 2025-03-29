@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MembreFilterServiceService } from 'src/app/services/membre-filter-service.service';
+import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
   selector: 'app-membres-page',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class MembresPageComponent {
 
+  constructor(private MembreServ: MembreFilterServiceService) { }
+  updateSeachQuery(query: string): void {
+    this.MembreServ.updateSearchQuery(query);
+  }
 }
