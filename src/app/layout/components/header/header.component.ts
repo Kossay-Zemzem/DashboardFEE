@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  title:string = 'Membres de comités';
-  leftOffsetTcss:string="left-[14.7rem]" //offset of the yellow box decoration
-  topOffsetTcss:string="top-[0.6rem]" //offset of the yellow box decoration
-  yellowBoxWidthTcss:string="w-40" //width of the yellow box decoration
+
+  @Input() title: string = 'Membres de comités';
+  @Input() leftOffsetTcss: string = "left-[14.7rem]" //offset of the yellow box decoration
+  @Input() topOffsetTcss: string = "top-[0.6rem]" //offset of the yellow box decoration
+  @Input() yellowBoxWidthTcss: string = "w-40" //width of the yellow box decoration
 
   ngOnInit() {
     console.log('HeaderComponent initialized');
   }
-  constructor() {}
+  constructor() { }
 }
