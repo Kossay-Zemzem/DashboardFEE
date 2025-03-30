@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class TacheComitePageComponent {
   FilterItems = [
-    { name: 'Tous', value: 5, selectedState: true },
-    { name: 'À faire ', value: 7, selectedState: false },
-    { name: 'Complété', value: 2, selectedState: false },
+    { name: 'Tous', value: 0, selectedState: true },
+    { name: 'À faire ', value: 0, selectedState: false },
+    { name: 'Complété', value: 0, selectedState: false },
   ];
+  selectedItem: string = this.FilterItems[0].name;
 }

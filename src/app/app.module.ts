@@ -25,6 +25,7 @@ import { MembresListeComponent } from './layout/components/membres-liste/membres
 import { MembreItemComponent } from './layout/components/membres-liste/membre-item/membre-item.component';
 import { YesNoIndicatorComponent } from './layout/components/yes-no-indicator/yes-no-indicator.component';
 import { TacheComitePageComponent } from './layout/tache-comite-page/tache-comite-page.component';
+import { ListFilterComponent } from './layout/components/list-filter/list-filter.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { TacheComitePageComponent } from './layout/tache-comite-page/tache-comit
     MembreItemComponent,
     YesNoIndicatorComponent,
     TacheComitePageComponent,
+    ListFilterComponent,
   ],
   imports: [
     BrowserModule,
