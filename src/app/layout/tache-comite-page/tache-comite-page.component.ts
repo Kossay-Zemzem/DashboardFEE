@@ -12,4 +12,8 @@ export class TacheComitePageComponent {
     { name: 'Complété', value: 0, selectedState: false },
   ];
   selectedItem: string = this.FilterItems[0].name;
+  searchQuery: string = '';
+  updateSeachQuery(query: string) {
+    this.searchQuery = query;
+  }
 }

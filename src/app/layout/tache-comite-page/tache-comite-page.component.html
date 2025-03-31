@@ -1,1 +1,29 @@
-<app-list-filter [FilterItems]="FilterItems" (selectedItemChange)="selectedItem" />
+<div class="flex flex-col gap-5">
+    <div class="flex flex-row items-center">
+        <app-search-bar class="w-11/12" (searchEvent)="updateSeachQuery($event)"
+            [placeholderText]="'Chercher une tache...'" />
+        <lucide-icon name="bell" class="w-28"></lucide-icon>
+    </div>
+    <app-list-filter [FilterItems]="FilterItems" (selectedItemChange)="selectedItem" />
+    <!--     <div class="grid grid-cols-2 gap-4 overflow-y-auto h-[calc(100vh-15rem)]">
+        <app-tache-card class="" />
+        <app-tache-card class="" />
+        <app-tache-card class="" />
+        <app-tache-card class="" />
+        <app-tache-card class="" />
+        <app-tache-card class="" />
+        <app-tache-card class="" />
+    </div> -->
+    <div class="grid md:grid-cols-2 grid-cols-1 gap-4 overflow-y-auto h-[calc(100vh-15rem)] no-scrollbar">
+        <app-tache-card class=""></app-tache-card>
+        <app-tache-card class=""></app-tache-card>
+        <app-tache-card class=""></app-tache-card>
+        <app-tache-card class=""></app-tache-card>
+        <app-tache-card class=""></app-tache-card>
+        <app-tache-card class=""></app-tache-card>
+        <app-tache-card class=""></app-tache-card>
+        <app-tache-card class=""></app-tache-card>
+        <app-tache-card class=""></app-tache-card>
+    </div>
+    <!--     <app-tache-card class="" /> -->
+</div>

@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 //ICON IMPORTS-------------------------------------
-import { LucideAngularModule, LayoutDashboard, LayoutList ,
-  MapPinCheck,UserRoundPlus,LogOut,Search,Bell,Pencil,Trash2} from 'lucide-angular';
+import {
+  LucideAngularModule, LayoutDashboard, LayoutList,
+  MapPinCheck, UserRoundPlus, LogOut, Search, Bell, Pencil, Trash2, Diamond, Users, Timer
+} from 'lucide-angular';
 //-------------------------------------------------
 //COMPONENTS IMPORTS-------------------------------
 import { AppComponent } from './app.component';
@@ -26,6 +28,8 @@ import { MembreItemComponent } from './layout/components/membres-liste/membre-it
 import { YesNoIndicatorComponent } from './layout/components/yes-no-indicator/yes-no-indicator.component';
 import { TacheComitePageComponent } from './layout/tache-comite-page/tache-comite-page.component';
 import { ListFilterComponent } from './layout/components/list-filter/list-filter.component';
+import { TacheCardComponent } from './layout/components/tache-card/tache-card.component';
+import { ItemSelectorPillComponent } from './layout/components/item-selector-pill/item-selector-pill.component';
 
 
 @NgModule({
@@ -45,14 +49,18 @@ import { ListFilterComponent } from './layout/components/list-filter/list-filter
     YesNoIndicatorComponent,
     TacheComitePageComponent,
     ListFilterComponent,
+    TacheCardComponent,
+    ItemSelectorPillComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    LucideAngularModule.pick({ LayoutDashboard,LayoutList,MapPinCheck,
-      UserRoundPlus,LogOut,Search,Bell,Pencil,Trash2  })
+    LucideAngularModule.pick({
+      LayoutDashboard, LayoutList, MapPinCheck,
+      UserRoundPlus, LogOut, Search, Bell, Pencil, Trash2, Diamond, Users, Timer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

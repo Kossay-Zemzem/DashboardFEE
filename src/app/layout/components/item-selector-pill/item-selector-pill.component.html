@@ -1,0 +1,96 @@
+<!-- <div class="flex bg-gray-200 p-1 rounded-full w-fit">
+    <button (click)="updateSelectedState('pending')"
+        class="px-4 py-2 rounded-full text-gray-700 hover:bg-blue-400 hover:text-white transition"
+        [ngClass]="{'bg-blue-500 text-white': selectedState === 'pending'}">
+        Pending
+    </button>
+    <button (click)="updateSelectedState('in-progress')"
+        class="px-4 py-2 rounded-full text-gray-700 hover:bg-yellow-400 hover:text-white transition"
+        [ngClass]="{'bg-yellow-500 text-white': selectedState === 'in-progress'}">
+        In Progress
+    </button>
+    <button (click)="updateSelectedState('Terminé')"
+        class="px-4 py-2 rounded-full text-gray-700 hover:bg-green-400 hover:text-white transition"
+        [ngClass]="{'bg-green-500 text-white': selectedState === 'Terminé'}">
+        Terminé
+    </button>
+</div> -->
+
+<!-- <div class="flex bg-gray-200 p-1 rounded-full w-fit">
+    <button (click)="updateSelectedState('pending')"
+        class="px-4 py-2 rounded-full text-gray-700 transition-all duration-300 ease-in-out transform hover:scale-105"
+        [ngClass]="{'bg-blue-500 text-white scale-105': selectedState === 'pending'}">
+        Pending
+    </button>
+
+    <button (click)="updateSelectedState('in-progress')"
+        class="px-4 py-2 rounded-full text-gray-700 transition-all duration-300 ease-in-out transform hover:scale-105"
+        [ngClass]="{'bg-yellow-500 text-white scale-105': selectedState === 'in-progress'}">
+        In Progress
+    </button>
+
+    <button (click)="updateSelectedState('Terminé')"
+        class="px-4 py-2 rounded-full text-gray-700 transition-all duration-300 ease-in-out transform hover:scale-105"
+        [ngClass]="{'bg-green-500 text-white scale-105': selectedState === 'Terminé'}">
+        Terminé
+    </button>
+</div> -->
+
+<!-- 
+<div class="relative bg-gray-200 p-1 rounded-full w-fit flex items-center">
+
+    <div class="absolute top-0 bottom-0 w-32 bg-blue-500 rounded-full transition-all duration-300 ease-in-out"
+        [ngStyle]="{'transform': translateX(selectedState)}" [ngClass]="{
+            'bg-blue-500': selectedState === 'pending',
+            'bg-yellow-500': selectedState === 'in-progress',
+            'bg-green-500': selectedState === 'Terminé'
+        }">
+    </div>
+
+
+    <button (click)="updateSelectedState('pending')"
+        class="px-4 py-1.5 rounded-full text-gray-700 w-32 text-center relative z-10">
+        Pending
+    </button>
+
+    <button (click)="updateSelectedState('in-progress')"
+        class="px-4 py-1.5 rounded-full text-gray-700 w-32 text-center relative z-10">
+        In Progress
+    </button>
+
+    <button (click)="updateSelectedState('Terminé')"
+        class="px-4 py-1.5 rounded-full text-gray-700 w-32 text-center relative z-10">
+        Terminé
+    </button>
+</div>
+ -->
+
+<div class="relative inline-block text-left">
+    <!-- Selected State (Button) -->
+    <button (click)="toggleDropdown()"
+        class="flex items-center px-4 py-2 rounded-2xl w-36 justify-evenly focus:outline-none transition font-normal "
+        [ngClass]="getStateColor(selectedState)">
+        {{ selectedState}}
+        <svg class="w-5 h-5 ml-2 transition-transform" [ngClass]="{'rotate-180': isDropdownOpen}"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+
+    <!-- Dropdown Menu -->
+    <div *ngIf="isDropdownOpen"
+        class="absolute left-0 w-full mt-2 bg-white border border-gray-300 rounded-lg shadow-md">
+        <button (click)="selectState(states[0])"
+            class="block w-full px-4 py-2 rounded-lg text-left transition text-gray-800 hover:bg-red-50 hover:text-red-600 focus:outline-none focus:bg-blue-100">
+            {{states[0]}}
+        </button>
+        <button (click)="selectState(states[1])"
+            class="block w-full px-4 py-2 rounded-lg text-left transition text-gray-800 hover:bg-yellow-50 hover:text-yellow-600 focus:outline-none focus:bg-yellow-100">
+            {{states[1]}}
+        </button>
+        <button (click)="selectState(states[2])"
+            class="block w-full px-4 py-2 rounded-lg text-left transition text-gray-800 hover:bg-green-50 hover:text-green-600 focus:outline-none focus:bg-green-100">
+            {{states[2]}}
+        </button>
+    </div>
+</div>
