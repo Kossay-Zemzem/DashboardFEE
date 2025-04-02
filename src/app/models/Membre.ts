@@ -6,5 +6,5 @@ export interface Membre {
     email: string;
     isLibre: boolean;
     imgSrc: string;
-    comite: string;
+    comite: string; // MEDIA , SPONSORING , LOGISTIQUE
 }

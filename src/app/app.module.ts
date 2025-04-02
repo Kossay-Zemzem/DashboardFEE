@@ -1,8 +1,13 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr);
 //ICON IMPORTS-------------------------------------
 import {
   LucideAngularModule, LayoutDashboard, LayoutList,
@@ -30,6 +35,7 @@ import { TacheComitePageComponent } from './layout/tache-comite-page/tache-comit
 import { ListFilterComponent } from './layout/components/list-filter/list-filter.component';
 import { TacheCardComponent } from './layout/components/tache-card/tache-card.component';
 import { ItemSelectorPillComponent } from './layout/components/item-selector-pill/item-selector-pill.component';
+
 
 
 @NgModule({
@@ -62,7 +68,9 @@ import { ItemSelectorPillComponent } from './layout/components/item-selector-pil
       UserRoundPlus, LogOut, Search, Bell, Pencil, Trash2, Diamond, Users, Timer
     })
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr' } // Set the Angular locale language to French (for date formatting, etc.)
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
