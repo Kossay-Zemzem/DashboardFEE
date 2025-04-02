@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-item-selector-pill',
@@ -39,7 +39,7 @@ export class ItemSelectorPillComponent {
     this.selectedState = this.states[0];
   }
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
   toggleDropdown(): void {
     this.isDropdownOpen = !this.isDropdownOpen;
     this.isDropdownOpenChange.emit(this.isDropdownOpen); // Emit the dropdown state
@@ -50,6 +50,14 @@ export class ItemSelectorPillComponent {
     this.isDropdownOpen = false; // Close dropdown after selection
     this.selectedStateChange.emit(this.selectedState); // Emit the selected state
     this.isDropdownOpenChange.emit(this.isDropdownOpen); // Emit the dropdown state
+  }
+  // Method to close the dropdown when clicking outside
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: Event): void {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.isDropdownOpen = false;
+      this.isDropdownOpenChange.emit(this.isDropdownOpen);
+    }
   }
 
   /*   // Method to update the selected state
