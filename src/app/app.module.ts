@@ -11,7 +11,7 @@ registerLocaleData(localeFr);
 //ICON IMPORTS-------------------------------------
 import {
   LucideAngularModule, LayoutDashboard, LayoutList,
-  MapPinCheck, UserRoundPlus, LogOut, Search, Bell, Pencil, Trash2, Diamond, Users, Timer
+  MapPinCheck, UserRoundPlus, LogOut, Search, Bell, Pencil, Trash2, Diamond, Users, UsersRound, Timer
 } from 'lucide-angular';
 //-------------------------------------------------
 //COMPONENTS IMPORTS-------------------------------
@@ -65,7 +65,7 @@ import { ItemSelectorPillComponent } from './layout/components/item-selector-pil
     FormsModule,
     LucideAngularModule.pick({
       LayoutDashboard, LayoutList, MapPinCheck,
-      UserRoundPlus, LogOut, Search, Bell, Pencil, Trash2, Diamond, Users, Timer
+      UserRoundPlus, LogOut, Search, Bell, Pencil, Trash2, Diamond, Users, UsersRound, Timer
     })
   ],
   providers: [

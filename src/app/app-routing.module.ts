@@ -10,7 +10,7 @@ import { TacheComitePageComponent } from './layout/tache-comite-page/tache-comit
 
 
 const routes: Routes = [
-  { path: "", redirectTo: "/tachesComite", pathMatch: "full" },
+  { path: "", redirectTo: "/auth", pathMatch: "full" },
   { path: "auth", component: AuthPageComponent },
   { path: "membres", component: MembresPageComponent },
   { path: "taches", component: TachePageComponent },

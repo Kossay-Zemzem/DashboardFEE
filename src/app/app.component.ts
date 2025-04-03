@@ -39,10 +39,14 @@ export class AppComponent implements OnInit {
       yellowBoxWidth: 'w-36'
     }
   };
-  //----------------------------------
-
-
-  //sidebar customisation
+  //sidebar customisation-------
+  //SidebarItems = [];
+  SidebarItems = [
+    { name: 'unkown', icon: 'unkown', link: '/unkown', activeState: true },
+    { name: 'unkown', icon: 'unkown', link: '/unkown', activeState: false },
+    { name: 'unkown', icon: 'unkown', link: '/unkown', activeState: false },
+    { name: 'unkown', icon: 'unkown', link: '/unkown', activeState: false },
+  ];
   constructor(private router: Router) { }
   // Check if the current route is one that requires the sidebar and header
   showLayout(): boolean {
@@ -55,6 +59,7 @@ export class AppComponent implements OnInit {
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd)) // Narrow the type to NavigationEnd
       .subscribe((event: NavigationEnd) => {
         this.updateTitle(event.urlAfterRedirects); // Update the title based on the new route
+        this.updateSidebar(event.urlAfterRedirects); // Update the sidebar based on the new route
       });
   }
 
@@ -63,5 +68,37 @@ export class AppComponent implements OnInit {
     this.leftOffsetTcss = this.titles[url].leftOffset;
     this.topOffsetTcss = this.titles[url].topOffset;
     this.yellowBoxWidthTcss = this.titles[url].yellowBoxWidth;
+  }
+  private updateSidebar(url: string): void {
+    const AdminRoutes = ['/demande', '/taches', '/membres']; //temporaire jusqu'a ce qu'on ait le backend et le routng final
+    const MembreRoutes = ['/tachesComite']; //temporaire jusqu'a ce qu'on ait le backend et le routng final
+
+    // Update sidebar items based on the URL (can be optimized further)
+    if (AdminRoutes.includes(this.router.url)) {
+      this.SidebarItems = [
+        { name: 'List Des Membres', icon: 'layout-dashboard', link: '/membres', activeState: true },
+        { name: 'Taches', icon: 'layout-list', link: '/taches', activeState: false },
+        { name: "Demandes d'inscription", icon: 'user-round-plus', link: '/demande', activeState: false },
+        { name: 'Log out', icon: 'log-out', link: '/', activeState: false },
+      ];
+    }
+    else if (MembreRoutes.includes(this.router.url)) {
+      this.SidebarItems = [
+        { name: 'Tableau de bord', icon: 'layout-dashboard', link: '/tachesComite', activeState: true },
+        { name: 'Mes taches', icon: 'layout-list', link: '/tacheMembreOnly', activeState: false },
+        { name: "Membres comité", icon: 'users-round', link: '/listeMembreComite', activeState: false },
+        { name: 'Log out', icon: 'log-out', link: '/', activeState: false },
+      ];
+    } else {
+      this.SidebarItems = [
+        { name: 'unkown', icon: 'unkown', link: '/unkown', activeState: true },
+        { name: 'unkown', icon: 'unkown', link: '/unkown', activeState: false },
+        { name: 'unkown', icon: 'unkown', link: '/unkown', activeState: false },
+        { name: 'unkown', icon: 'unkown', link: '/unkown', activeState: false },
+      ]
+    }
+    this.SidebarItems.forEach(item => {
+      item.activeState = url.includes(item.link);
+    });
   }
 }

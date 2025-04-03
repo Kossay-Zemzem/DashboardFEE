@@ -1,5 +1,5 @@
 <div class="flex flex-row h-screen gap-3 overflow-auto" *ngIf="showLayout(); else noLayout">
-  <app-sidebar></app-sidebar>
+  <app-sidebar [SidebarItems]="SidebarItems"></app-sidebar>
   <div class="flex flex-col flex-auto">
     <app-header [title]="title" [leftOffsetTcss]="leftOffsetTcss" [topOffsetTcss]="topOffsetTcss"
       [yellowBoxWidthTcss]="yellowBoxWidthTcss" />
