@@ -7,5 +7,5 @@ export interface Tache {
     deadline: Date;
     etat: EtatTache;
     comite: string; // MEDIA , SPONSORING , LOGISTIQUE
-    idMembresConcerne: number[];
+    MembresConcerne: string[]; //IDs of membres in the backend , they get converted to names BEFORE the http response is recieved
 }

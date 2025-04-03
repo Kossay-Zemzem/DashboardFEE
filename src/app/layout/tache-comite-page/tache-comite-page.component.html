@@ -4,25 +4,10 @@
             [placeholderText]="'Chercher une tache...'" />
         <lucide-icon name="bell" class="w-28"></lucide-icon>
     </div>
-    <app-list-filter [FilterItems]="FilterItems" (selectedItemChange)="selectedItem" />
-    <!--     <div class="grid grid-cols-2 gap-4 overflow-y-auto h-[calc(100vh-15rem)]">
-        <app-tache-card class="" />
-        <app-tache-card class="" />
-        <app-tache-card class="" />
-        <app-tache-card class="" />
-        <app-tache-card class="" />
-        <app-tache-card class="" />
-        <app-tache-card class="" />
-    </div> -->
-    <div class="grid md:grid-cols-2 grid-cols-1 gap-4 overflow-y-auto h-[calc(100vh-15rem)] no-scrollbar">
-        <app-tache-card class=""></app-tache-card>
-        <app-tache-card class=""></app-tache-card>
-        <app-tache-card class=""></app-tache-card>
-        <app-tache-card class=""></app-tache-card>
-        <app-tache-card class=""></app-tache-card>
-        <app-tache-card class=""></app-tache-card>
-        <app-tache-card class=""></app-tache-card>
-        <app-tache-card class=""></app-tache-card>
-        <app-tache-card class=""></app-tache-card>
+    <app-list-filter [FilterItems]="FilterItems" (selectedItemChange)="selectedFilter" />
+    <div
+        class="grid lg:grid-cols-2 grid-cols-1 gap-4 content-start overflow-y-auto h-[calc(100vh-15rem)] no-scrollbar ">
+        <app-tache-card *ngFor="let tache of TachesData" [tacheData]="tache"
+            (etatChanged)="updateTacheState($event.id,$event.NouvelleEtat)" />
     </div>
 </div>

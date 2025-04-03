@@ -1,4 +1,4 @@
-<div class="flex flex-row justify-between h-full border-4 p-4 items-center rounded-lg ">
+<div class="flex flex-row justify-between min-h-28 max-h-fit border-4 p-4 items-center rounded-lg ">
     <div class="flex flex-col justify-around h-full min-h-28">
         <div class="flex flex-row gap-2 items-center">
             <lucide-icon name="diamond" class="fill-red-500 stroke-none w-5" />
@@ -10,7 +10,7 @@
             <lucide-icon name="users" class="fill-blue-500 stroke-none w-5" />
             <div class="font-inter font-semibold">
                 Affecté à:
-                <span class="font-normal">{{tacheData.nomMembresConcerne.join(",")}}</span>
+                <span class="font-normal">{{tacheData.MembresConcerne.join(",")}}</span>
 
             </div>
         </div>
@@ -22,7 +22,8 @@
         </div>
     </div>
     <div>
-        <app-item-selector-pill [stateData]="stateData" (isDropdownOpenChange)="updateIsDropdownOpenChange($event)"
+        <app-item-selector-pill [selectedState]="tacheData.etat" [stateSelectorData]="stateSelectorData"
+            (isDropdownOpenChange)="updateIsDropdownOpenChange($event)"
             (selectedStateChange)="updateSelectedStateChange($event)" />
     </div>
 </div>

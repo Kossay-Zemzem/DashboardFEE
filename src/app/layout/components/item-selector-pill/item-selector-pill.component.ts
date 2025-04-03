@@ -6,12 +6,12 @@ import { Component, Input, Output, EventEmitter, HostListener, ElementRef } from
   styleUrls: ['./item-selector-pill.component.css']
 })
 export class ItemSelectorPillComponent {
-  selectedState: string = 'unkown'; // Default state
+  @Input() selectedState: string = 'unkown'; // Default state
   isDropdownOpen: boolean = false;
   @Output() selectedStateChange: EventEmitter<string> = new EventEmitter<string>();
   @Output() isDropdownOpenChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  @Input() stateData: { name: string; color: string }[] = [];
+  @Input() stateSelectorData: { name: string; color: string }[] = [];
   //example data
   /*[{
     name: 'En attente',
@@ -27,22 +27,21 @@ export class ItemSelectorPillComponent {
   }]*/
 
   get states(): string[] {
-    return this.stateData.map(state => state.name);
+    return this.stateSelectorData.map(state => state.name);
   }
 
   getStateColor(state: string): string {
-    const stateObj = this.stateData.find(s => s.name === state);
+    const stateObj = this.stateSelectorData.find(s => s.name === state);
     return stateObj ? stateObj.color : '';
   }
   ngOnInit() {
-    // Set the default selected state to the first state in the list
-    this.selectedState = this.states[0];
   }
 
   constructor(private elementRef: ElementRef) { }
   toggleDropdown(): void {
     this.isDropdownOpen = !this.isDropdownOpen;
     this.isDropdownOpenChange.emit(this.isDropdownOpen); // Emit the dropdown state
+    console.log(this.selectedState);
   }
 
   selectState(state: string): void {

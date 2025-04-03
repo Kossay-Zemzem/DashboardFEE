@@ -73,9 +73,7 @@ export class MembresListeComponent implements OnInit {
     this.ComiteFilterServ.updateNbMembreParComite(this.nbMemParComite); //notify the subscribers of the new value 
   }
 
-  ngOnDestroy(): void { //a methode that unsubscribes from the subscription when the component is destroyed to avoid memory leaks
-    this.subscription.unsubscribe();
-  }
+
   supprimerMembre(id: number): void {
     // Optimistically remove the member from the data array
     this.data = this.data.filter(membre => membre.id !== id);
@@ -106,5 +104,8 @@ export class MembresListeComponent implements OnInit {
         alert('Failed to update the user. Please try again.');
       }
     });
+  }
+  ngOnDestroy(): void { //a methode that unsubscribes from the subscription when the component is destroyed to avoid memory leaks
+    this.subscription.unsubscribe();
   }
 }
