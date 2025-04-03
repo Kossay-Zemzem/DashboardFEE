@@ -42,13 +42,18 @@ export class TacheComitePageComponent {
   }
   get getTacheByState(): Tache[] {
     /* return this.TachesData.filter(tache => tache.etat === this.selectedStateFilter); */
-    switch (this.selectedStateFilter) {
-      case 'Tous':
-        return this.TachesData;
-      case 'À faire':
-        return this.TachesData.filter(tache => tache.etat === EtatTache.EN_ATTENTE);
-      case 'Complété':
-        return this.TachesData.filter(tache => tache.etat === EtatTache.TERMINEE);
+    if (this.searchQuery) { // If there is a search query, filter the data based on it
+      return this.TachesData.filter(tache =>
+        (tache.titre).toLowerCase().includes(this.searchQuery.toLowerCase()));
+    } else {
+      switch (this.selectedStateFilter) {
+        case 'Tous':
+          return this.TachesData;
+        case 'À faire':
+          return this.TachesData.filter(tache => tache.etat === EtatTache.EN_ATTENTE);
+        case 'Complété':
+          return this.TachesData.filter(tache => tache.etat === EtatTache.TERMINEE);
+      }
     }
     return this.TachesData; // Default case, return all tasks
   }
