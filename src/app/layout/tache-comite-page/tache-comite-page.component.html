@@ -4,10 +4,11 @@
             [placeholderText]="'Chercher une tache...'" />
         <lucide-icon name="bell" class="w-28"></lucide-icon>
     </div>
-    <app-list-filter [FilterItems]="FilterItems" (selectedItemChange)="selectedFilter" />
+    <app-list-filter [FilterItems]="FilterItems" (selectedItemChange)="selectedStateFilter=$event" />
+    <!-- possible conversion issue *i* -->
     <div
         class="grid lg:grid-cols-2 grid-cols-1 gap-4 content-start overflow-y-auto h-[calc(100vh-15rem)] no-scrollbar ">
-        <app-tache-card *ngFor="let tache of TachesData" [tacheData]="tache"
+        <app-tache-card *ngFor="let tache of getTacheByState" [tacheData]="tache"
             (etatChanged)="updateTacheState($event.id,$event.NouvelleEtat)" />
     </div>
 </div>
