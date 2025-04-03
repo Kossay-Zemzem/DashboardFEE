@@ -82,7 +82,7 @@ export class MembresListeComponent implements OnInit {
     this.MemberServ.deleteMembre(id).subscribe({
       next: () => {
         console.log(`Membre with ID ${id} deleted successfully.`);
-        alert('WARNING: Delete logic has not yet been implemented (user was not realy deleted)');
+        //alert('WARNING: Delete logic has not yet been implemented (user was not realy deleted)');
       },
       error: (err) => {
         console.error(`Failed to delete membre with ID ${id}:`, err);
@@ -97,7 +97,7 @@ export class MembresListeComponent implements OnInit {
     this.MemberServ.updateMembre(id, numero).subscribe({
       next: () => {
         console.log(`Membre with ID ${id} updated successfully.`);
-        alert('WARNING: Update logic has not yet been implemented (user was not realy updated)');
+        //alert('WARNING: Update logic has not yet been implemented (user was not realy updated)');
       },
       error: (err) => {
         console.error(`Failed to update membre with ID ${id}:`, err);
